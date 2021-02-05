@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from .forms import GithubForm
 from .scripts import get_data
@@ -14,6 +14,7 @@ def home(request):
                 'data':get_data(cd['username'])
             }
             form.save()
+            return redirect('api:home')
 
     else:
         form = GithubForm()
