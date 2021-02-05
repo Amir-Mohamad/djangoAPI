@@ -1,8 +1,9 @@
 import requests
 import json
 
-def get_data(username):
-    url = f"https://api.github.com/users/{username}"
+def get_data():
+    url = f"https://api.github.com/users/Amir-Mohamad"
     r = requests.get(url)
-    data = json.loads(r)
-    return data
+    data = r.json()
+    data_list = [i for i in data]
+    return data_list

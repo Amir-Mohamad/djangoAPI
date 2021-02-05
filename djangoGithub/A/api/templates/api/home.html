@@ -12,5 +12,10 @@
         {{form}}
         <button type="submit">Submit</button>
     </form>
+
+    {% for d in data %}
+        <p>{{d.id}}</p>
+    {% endfor %}
+
 </body>
 </html>
