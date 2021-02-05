@@ -20,5 +20,6 @@ def home(request):
     return render(request, 'api/home.html', context)
 
 def result(request, username):
+    # getting github account data using :
     data = get_data(username)
     return render(request, 'api/result.html', {'data':data})
