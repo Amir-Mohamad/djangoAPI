@@ -9,16 +9,16 @@ def home(request):
         form = GithubForm(request.POST)
         if form.is_valid():
             cd = form.cleaned_data
-            context = {
-                'form':form,
-                'data':get_data(cd['username'])
-            }
+            username = cd['username']
             form.save()
-            return redirect('api:home')
-
+            return redirect('api:result', username)
     else:
         form = GithubForm()
-        context = {
-            'form':form
-        }
+    context = {
+        'form':form
+    }
     return render(request, 'api/home.html', context)
+
+def result(request, username):
+    data = get_data(username)
+    return render(request, 'api/result.html', {'data':data})
