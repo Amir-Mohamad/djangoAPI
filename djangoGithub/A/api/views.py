@@ -8,9 +8,10 @@ def home(request):
     if request.method == 'POST':
         form = GithubForm(request.POST)
         if form.is_valid():
+            cd = form.cleaned_data
             context = {
                 'form':form,
-                'data':get_data()
+                'data':get_data(cd['username'])
             }
             form.save()
 
