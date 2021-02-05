@@ -1,20 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DjangoGIthub</title>
+    <title>Programming datas</title>
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
+        integrity="sha256-8B1OaG0zT7uYA572S2xOxWACq9NXYPQ+U5kHPV1bJN4=" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
 </head>
+
 <body>
+
+
+
     <form action="" method="POST">
         {% csrf_token %}
 
         {{form}}
         <button type="submit">Submit</button>
     </form>
+    <table class="table is-fullwidth is-striped is-bordered">
+        <thead>
+            <tr>
+                <th>Usernaem</th>
+                <th>id</th>
+                <th>email</th>
+                <th>name</th>
+                <th>blog</th>
+                <th>location</th>
+                <th>twitter_username</th>
+                <th>public_repos</th>
+                <th>public_gists</th>
+                <th>followers</th>
+                <th>following</th>
+                <th>created_at</th>
+                <th>updated_at</th>
 
-
-    <p>{{data}}</p>
-
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>{{ data.login }}</th>
+                <th>{{ data.id }}</th>
+                <th>{{ data.email }}</th>
+                <th>{{ data.name }}</th>
+                <th>{{ data.blog }}</th>
+                <th>{{ data.location }}</th>
+                <th>{{ data.twitter_username }}</th>
+                <th>{{ data.public_repos }}</th>
+                <th>{{ data.public_gists }}</th>
+                <th>{{ data.followers }}</th>
+                <th>{{ data.following }}</th>
+                <th>{{ data.created_at }}</th>
+                <th>{{ data.updated_at }}</th>
+            </tr>
+        </tbody>
+    </table>
 </body>
+
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
