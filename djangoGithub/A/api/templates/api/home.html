@@ -6,16 +6,15 @@
     <title>DjangoGIthub</title>
 </head>
 <body>
-    <form action="/" method="POST">
+    <form action="" method="POST">
         {% csrf_token %}
 
         {{form}}
         <button type="submit">Submit</button>
     </form>
 
-    {% for d in data %}
-        <p>{{d.id}}</p>
-    {% endfor %}
+
+    <p>{{data.login}}</p>
 
 </body>
 </html>

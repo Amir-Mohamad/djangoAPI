@@ -9,12 +9,14 @@ def home(request):
         form = GithubForm(request.POST)
         if form.is_valid():
             context = {
-                'data':get_data(form.cleaned_data['username'])
+                'form':form,
+                'data':get_data()
             }
             form.save()
+
     else:
         form = GithubForm()
-    context = {
-        'form':form
-    }
+        context = {
+            'form':form
+        }
     return render(request, 'api/home.html', context)
